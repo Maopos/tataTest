@@ -17,7 +17,7 @@ class NotesViewModel {
         self.notes = notes
     }
     
-    func crateNote(title: String, text: String) {
+    func createNote(title: String, text: String?) {
         let note: NoteModel = .init(title: title, text: text, createdAt: .now)
         notes.append(note)
     }

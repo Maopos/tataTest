@@ -5,7 +5,7 @@
 //  Created by Mauricio Posada on 1/10/25.
 //
 
-import SwiftUI
+import Foundation
 
 struct NoteModel: Identifiable, Hashable {
     let id: UUID

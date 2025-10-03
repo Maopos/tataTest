@@ -44,7 +44,7 @@ struct NewNoteView: View {
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        viewModel.crateNote(title: self.title, text: self.text)
+                        viewModel.createNote(title: self.title, text: self.text)
                         dismiss()
                     } label: {
                         Image(systemName: "square.and.arrow.down.badge.checkmark")
