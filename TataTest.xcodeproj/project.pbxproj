@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		226F039E2E8F61D200C75D28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 223C4D7C2E8D69EE0089981C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 223C4D832E8D69EE0089981C;
+			remoteInfo = TataTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		223C4D842E8D69EE0089981C /* TataTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TataTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		226F039A2E8F61D200C75D28 /* TataXCTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TataXCTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = TataTest;
 			sourceTree = "<group>";
 		};
+		226F039B2E8F61D200C75D28 /* TataXCTest */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TataXCTest;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		223C4D812E8D69EE0089981C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F03972E8F61D200C75D28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				223C4D862E8D69EE0089981C /* TataTest */,
+				226F039B2E8F61D200C75D28 /* TataXCTest */,
 				223C4D852E8D69EE0089981C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				223C4D842E8D69EE0089981C /* TataTest.app */,
+				226F039A2E8F61D200C75D28 /* TataXCTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = 223C4D842E8D69EE0089981C /* TataTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		226F03992E8F61D200C75D28 /* TataXCTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 226F03A02E8F61D200C75D28 /* Build configuration list for PBXNativeTarget "TataXCTest" */;
+			buildPhases = (
+				226F03962E8F61D200C75D28 /* Sources */,
+				226F03972E8F61D200C75D28 /* Frameworks */,
+				226F03982E8F61D200C75D28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				226F039F2E8F61D200C75D28 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				226F039B2E8F61D200C75D28 /* TataXCTest */,
+			);
+			name = TataXCTest;
+			packageProductDependencies = (
+			);
+			productName = TataXCTest;
+			productReference = 226F039A2E8F61D200C75D28 /* TataXCTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					223C4D832E8D69EE0089981C = {
 						CreatedOnToolsVersion = 26.0.1;
+					};
+					226F03992E8F61D200C75D28 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 223C4D832E8D69EE0089981C;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				223C4D832E8D69EE0089981C /* TataTest */,
+				226F03992E8F61D200C75D28 /* TataXCTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		223C4D822E8D69EE0089981C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		226F03982E8F61D200C75D28 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		226F03962E8F61D200C75D28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		226F039F2E8F61D200C75D28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 223C4D832E8D69EE0089981C /* TataTest */;
+			targetProxy = 226F039E2E8F61D200C75D28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		223C4D8F2E8D69EF0089981C /* Debug */ = {
@@ -310,6 +385,48 @@
 			};
 			name = Release;
 		};
+		226F03A12E8F61D200C75D28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 988FMB93B7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = maoposites.TataXCTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TataTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TataTest";
+			};
+			name = Debug;
+		};
+		226F03A22E8F61D200C75D28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 988FMB93B7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = maoposites.TataXCTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TataTest.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TataTest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +444,15 @@
 			buildConfigurations = (
 				223C4D922E8D69EF0089981C /* Debug */,
 				223C4D932E8D69EF0089981C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		226F03A02E8F61D200C75D28 /* Build configuration list for PBXNativeTarget "TataXCTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				226F03A12E8F61D200C75D28 /* Debug */,
+				226F03A22E8F61D200C75D28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
