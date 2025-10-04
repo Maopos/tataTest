@@ -18,8 +18,10 @@ class NotesViewModel {
     }
     
     func createNote(title: String, text: String?) {
-        let note: NoteModel = .init(title: title, text: text, createdAt: .now)
-        notes.append(note)
+        if !title.isEmpty {
+            let note: NoteModel = .init(title: title, text: text, createdAt: .now)
+            notes.append(note)
+        }
     }
     
     func updateNote(id: UUID, title: String, text: String) {
@@ -33,5 +35,4 @@ class NotesViewModel {
             notes.remove(at: index)
         }
     }
-    
 }
