@@ -31,7 +31,7 @@ struct ContentView: View {
             }
             .navigationTitle("Mis notas")
             .navigationDestination(for: NoteModel.self, destination: { note in
-                EditNoteView(viewModel: viewModel, id: note.id, title: note.title, text: note.getText)
+                EditNoteView(viewModel: viewModel, identifier: note.identifier, title: note.title, text: note.getText)
             })
             .toolbar {
                 ToolbarItem {
@@ -49,10 +49,10 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView(viewModel: .init(notes: [
-        NoteModel(title: "Dirección", text: "Colinas del bosque", createdAt: .now),
-        NoteModel(title: "Teléfono", text: "3113009748", createdAt: .now),
-        NoteModel(title: "Documento de identidad", text: "9726604", createdAt: .now)
-    ]))
-}
+//#Preview {
+//    ContentView(viewModel: .init(notes: [
+//        NoteModel(title: "Dirección", text: "Colinas del bosque", createdAt: .now),
+//        NoteModel(title: "Teléfono", text: "3113009748", createdAt: .now),
+//        NoteModel(title: "Documento de identidad", text: "9726604", createdAt: .now)
+//    ]))
+//}

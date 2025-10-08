@@ -12,7 +12,7 @@ struct EditNoteView: View {
     @Environment(\.dismiss) private var dismiss
     
     var viewModel: NotesViewModel
-    let id: UUID
+    let identifier: UUID
     @State var title: String = ""
     @State var text: String = ""
     
@@ -30,7 +30,7 @@ struct EditNoteView: View {
             }
             
             Button {
-                viewModel.deleteNote(id: id)
+                viewModel.deleteNote(identifier: identifier)
                 dismiss()
             } label: {
                 Label {
@@ -47,7 +47,7 @@ struct EditNoteView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
-                        viewModel.updateNote(id: id, title: self.title, text: self.text)
+                        viewModel.updateNote(identifier: identifier, title: self.title, text: self.text)
                         dismiss()
                     } label: {
                         Image(systemName: "pencil.and.list.clipboard")
@@ -60,6 +60,6 @@ struct EditNoteView: View {
     }
 }
 
-#Preview {
-    EditNoteView(viewModel: NotesViewModel(), id: UUID())
-}
+//#Preview {
+//    EditNoteView(viewModel: NotesViewModel(), identifier: UUID())
+//}
