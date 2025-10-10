@@ -52,6 +52,4 @@ class NotesDataBase: NotesDataBaseprotocol {
             throw DataBaseError.InsertNoteError
         }
     }
-    
-    
 }
