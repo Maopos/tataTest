@@ -8,82 +8,91 @@
 import Testing
 @testable import TataTest
 
-//@Suite struct NotesViewModelXCTest {
-//    
-//    var viewModel: NotesViewModel
-//    
-//    init() {
-//        viewModel = NotesViewModel()
-//    }
-//    
-//    @Test("Create Note")
-//    func createNewNote() {
-//        
-//        let title = "Title"
-//        let text = "Text"
-//        
-//        viewModel.createNote(title: title, text: text)
-//        #expect(viewModel.notes.count == 1, "❌ Error: No se crea la nota")
-//        #expect(viewModel.notes[0].title == title, "❌ Error: No conincide el titulo")
-//        #expect(viewModel.notes[0].getText == text, "❌ Error: No conincide el texto")
-//    }
-//    
-//    @Test func createNewNoteEmptyText() {
-//        
-//        let title = "Title"
-//        let text = ""
-//        
-//        viewModel.createNote(title: title, text: text)
-//        #expect(viewModel.notes.count == 1, "❌ Error: No se crea la nota")
-//        #expect(viewModel.notes[0].title == title, "❌ Error: No conincide el titulo")
-//        #expect(viewModel.notes[0].getText == "", "❌ Error: No conincide el texto")
-//    }
-//    
-//    @Test func createNewNoteNilText() {
-//        
-//        let title = "Title"
-//        let text: String? = nil
-//        
-//        viewModel.createNote(title: title, text: text)
-//        #expect(viewModel.notes.count == 1, "❌ Error: No se crea la nota")
-//        #expect(viewModel.notes[0].title == title, "❌ Error: No conincide el titulo")
-//        #expect(viewModel.notes[0].getText == "", "❌ Error: Nil debe devolver string vacio")
-//    }
-//    
-//    @Test func createNoteEmptyTitle() {
-//        
-//        let title = ""
-//        let text = "Texto de nota"
-//        
-//        viewModel.createNote(title: title, text: text)
-//        
-//        #expect(viewModel.notes.isEmpty, "❌ Error: Titulo de nota vacio, no debería crearse una nota")
-//    }
-//    
-//    @Test func createThreeNotes() {
-//        
-//        let title1 = "Title1"
-//        let text1 = "Text1"
-//        let title2 = "Title2"
-//        let text2 = "Text2"
-//        let title3 = "Title3"
-//        let text3 = "Text3"
-//        
-//        viewModel.createNote(title: title1, text: text1)
-//        viewModel.createNote(title: title2, text: text2)
-//        viewModel.createNote(title: title3, text: text3)
-//        
-//        #expect(viewModel.notes.first?.title == title1)
-//        #expect(viewModel.notes.first?.text == text1)
-//        
-//        #expect(viewModel.notes[1].title == title2)
-//        #expect(viewModel.notes[1].text == text2)
-//        
-//        #expect(viewModel.notes[2].title == title3)
-//        #expect(viewModel.notes[2].text == text3)
-//        
-//    }
-//    
+@Suite struct NotesViewModelXCTest {
+    
+    var viewModel: NotesViewModel
+    
+    init() {
+        viewModel = NotesViewModel()
+    }
+    
+    @Test("Create Note")
+    func createNewNote() throws {
+        
+        let title = "Title"
+        let text = "Text"
+        
+        viewModel.createNote(title: title, text: text)
+        try #require(viewModel.notes.count == 1, "❌ maotest Error: No se crea la nota")
+        try #require(viewModel.notes[0].title == title, "❌ maotest Error: No conincide el titulo")
+        try #require(viewModel.notes[0].getText == text, "❌ maotest Error: No conincide el texto")
+        
+        print("✅ maotest Create Note UnitaryTest 🎉")
+    }
+    
+    @Test func createNewNoteEmptyText() throws {
+        
+        let title = "Title"
+        let text = ""
+        
+        viewModel.createNote(title: title, text: text)
+        try #require(viewModel.notes.count == 1, "❌ maotest Error: No se crea la nota")
+        try #require(viewModel.notes[0].title == title, "❌ maotest Error: No conincide el titulo")
+        try #require(viewModel.notes[0].getText == "", "❌ maotest Error: No conincide el texto")
+        
+        print("✅ maotest Create Note empty text success 🎉")
+    }
+    
+    @Test func createNewNoteNilText() throws {
+        
+        let title = "Title"
+        let text: String? = nil
+        
+        viewModel.createNote(title: title, text: text)
+        try #require(viewModel.notes.count == 1, "❌ maotest Error: No se crea la nota")
+        try #require(viewModel.notes[0].title == title, "❌ maotest Error: No conincide el titulo")
+        try #require(viewModel.notes[0].getText == "", "❌ maotest Error: Nil debe devolver string vacio")
+        
+        print("✅ maotest Create Nil text success 🎉")
+    }
+    
+    @Test func createNoteEmptyTitle() throws {
+        
+        let title = ""
+        let text = "Texto de nota"
+        
+        viewModel.createNote(title: title, text: text)
+        
+        try #require(viewModel.notes.isEmpty, "❌ maotest Error: Titulo de nota vacio, no debería crearse una nota")
+        
+        print("✅ maotest Create note empty title success 🎉")
+    }
+    
+    @Test func createThreeNotes() throws {
+        
+        let title1 = "Title1"
+        let text1 = "Text1"
+        let title2 = "Title2"
+        let text2 = "Text2"
+        let title3 = "Title3"
+        let text3 = "Text3"
+        
+        viewModel.createNote(title: title1, text: text1)
+        viewModel.createNote(title: title2, text: text2)
+        viewModel.createNote(title: title3, text: text3)
+        
+        try #require(viewModel.notes.first?.title == title1, "❌ maotest Create note title 1 fails")
+        try #require(viewModel.notes.first?.text == text1, "❌ maotest Create note text 1 fails")
+        
+        try #require(viewModel.notes[1].title == title2, "❌ maotest Create note title 2 fails")
+        try #require(viewModel.notes[1].text == text2, "❌ maotest Create note text 2 fails")
+        
+        try #require(viewModel.notes[2].title == title3, "❌ maotest Create note title 3 fails")
+        try #require(viewModel.notes[2].text == text3, "❌ maotest Create note text 3 fails")
+        
+        print("✅ maotest Create three notes success 🎉")
+    }
+    
 //    @Test func updateNoteTest() {
 //        let title = "Title"
 //        let text = "Text"
@@ -113,7 +122,7 @@ import Testing
 //            #expect(Bool(false), "❌ No se encontró la nota actualizada")
 //        }
 //    }
-//    
+    
 //    @Test func deleteNoteTest() {
 //        let title = "Title"
 //        let text = "Text"
@@ -139,4 +148,4 @@ import Testing
 //        let stillExists = viewModel.notes.contains { $0.identifier == identifier }
 //        #expect(!stillExists, "❌ La nota con id \(identifier) aún existe después de eliminar")
 //    }
-//}
+}

@@ -66,7 +66,9 @@ struct NotesVMIntegrationTests {
         
         try #require(sut.notes.count == 2, "❌ maotest Fetch Notes count error")
         try #require(sut.notes.map(\.title).contains("Note 1"), "❌ maotest Fetch Notes title 1 error")
+        try #require(sut.notes.map(\.text).contains("Text 1"), "❌ maotest Fetch Notes text 1 error")
         try #require(sut.notes.map(\.title).contains("Note 2"), "❌ maotest Fetch Notes title 2 error")
+        try #require(sut.notes.map(\.text).contains("Text 2"), "❌ maotest Fetch Notes text 2 error")
         
         print("✅ maotest Fetch all Notes 🎉")
     }
